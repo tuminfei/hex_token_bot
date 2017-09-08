@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "hex_token_bot"
+require 'optparse'
+require 'irb'
+require 'yaml'
+
+options = OptionParser.new do |opts|
+  opts.banner = 'usage: hex_token_bot [options] CREDENTIAL'
+
+  opts.on_tail('-v', '--version', 'Prints the version') do
+    puts HexTokenBot::VERSION
+    exit
+  end
+
+  opts.on_tail('-h', '--help', 'Prints this message') do
+    puts opts
+    exit
+  end
+end
+
+options.parse!

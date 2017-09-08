@@ -1,0 +1,21 @@
+bter:
+  client: bter
+  enabled: true
+  access_key: 'B1B68BC5-6A6C-40DC-98B7-C0A95D048533'
+  secret_key: '3a6864a81d6569acfa997fb8c8103e5a01a50f135fbb1e721d8f056f7b772b89'
+  endpoint: 'http://data.bter.com/'
+  timeout: 60
+hex:
+  client: bter
+  enabled: true
+  access_key: 'B1B68BC5-6A6C-40DC-98B7-C0A95D048533'
+  secret_key: '3a6864a81d6569acfa997fb8c8103e5a01a50f135fbb1e721d8f056f7b772b89'
+  endpoint: 'http://data.bter.com/'
+  timeout: 60
+hex_test:
+  client: hex
+  enabled: true
+  access_key: '1ouyUQZzG3dXYWxQCqNxFmQcp1r2mxxZJoqQPu2E'
+  secret_key: 'y2LOHy4GC5j5uSXWwSVO7MwMusXfxe0Z5suOciKC'
+  endpoint: 'https://hex.chainresearch.org/'
+  timeout: 60

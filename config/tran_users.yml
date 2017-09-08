@@ -1,0 +1,12 @@
+buyer:
+  user_name: 'tmf'
+  access_key: '1ouyUQZzG3dXYWxQCqNxFmQcp1r2mxxZJoqQPu2E'
+  secret_key: 'y2LOHy4GC5j5uSXWwSVO7MwMusXfxe0Z5suOciKC'
+  endpoint: 'https://hex.chainresearch.org/'
+  timeout: 60
+seller:
+  user_name: 'wmz'
+  access_key: '3f2M7BjndKhTLPWsbxp0MIMeBEWGHXuQq7D5wXlh'
+  secret_key: 'Rx7LN57sx3Kr7rA4LORuFhMsUNRxp750zGQfXRwg'
+  endpoint: 'https://hex.chainresearch.org/'
+  timeout: 60

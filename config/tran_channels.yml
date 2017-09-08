@@ -1,0 +1,5 @@
+hex:
+  enabled: true
+  access_key: '1ouyUQZzG3dXYWxQCqNxFmQcp1r2mxxZJoqQPu2E'
+  secret_key: 'y2LOHy4GC5j5uSXWwSVO7MwMusXfxe0Z5suOciKC'
+  endpoint: 'https://hex.chainresearch.org/'

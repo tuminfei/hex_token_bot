@@ -1,0 +1,26 @@
+- id: btccny
+  name: BTC/CNY
+  base_unit: btc
+  quote_unit: cny
+  bots:
+    -
+      bot_name: 'order_books'
+      bot_params:
+        tran_amount: 0.0001
+        when_ever: 5m
+      bot_datas:
+        - channel_name: 'bter'
+        - channel_name: '58token'
+- id: ethcny
+  name: ETH/CNY
+  base_unit: eth
+  quote_unit: cny
+  bots:
+    -
+      bot_name: 'order_books'
+      bot_params:
+        tran_amount: 0.0001
+        when_ever: 5m
+      bot_datas:
+        - channel_name: 'bter'
+        - channel_name: '58token'
