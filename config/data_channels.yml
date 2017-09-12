@@ -12,6 +12,13 @@ hex:
   secret_key: '3a6864a81d6569acfa997fb8c8103e5a01a50f135fbb1e721d8f056f7b772b89'
   endpoint: 'http://data.bter.com/'
   timeout: 60
+okcoin:
+  client: okcoin
+  enabled: true
+  access_key: '98ce18a1-0e03-47a4-b72e-c48f2f16d46e'
+  secret_key: 'A29DE98A0EEF51EFA8372A1B89274B01'
+  endpoint: 'https://www.okcoin.cn/api/'
+  timeout: 60
 hex_test:
   client: hex
   enabled: true
