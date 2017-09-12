@@ -8,11 +8,11 @@ module HexTokenBot
         api_key = options['access_key'] || HexTokenBot.data_channels['okcoin']['access_key']
         secret_key = options['secret_key'] || HexTokenBot.data_channels['okcoin']['secret_key']
 
-        @client = Okcoin::Client.new Okcoin::Client.new url: url, api_key: api_key, secret_key: secret_key
+        @client = Okcoin::Client.new url: url, api_key: api_key, secret_key: secret_key
       end
 
 
-      def get_market_order_book(market_code, asks_limit, bids_limit)
+      def get_market_order_book(market_code, asks_limit = nil , bids_limit = nil)
         rep = client.trades(symbol: market_code, since: nil)
         rep
       end
