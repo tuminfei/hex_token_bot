@@ -5,6 +5,7 @@
   bot_data_channels:
     - 'bter'
     - 'hex'
+    - 'okcoin'
   bot_markets:
     - id: btccny
       name: BTC/CNY
