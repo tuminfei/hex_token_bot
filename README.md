@@ -19,6 +19,30 @@ And then execute:
 Or install it yourself as:
 
     $ gem install hex_token_bot
+    
+copy config YML to Rails
+
+    bots.yml
+    data_channels.yml
+    tran_channels.yml
+    tran_users.yml
+    
+create init setup file
+
+````ruby
+HexTokenBot.bots_yml = {
+    :file_bots => Rails.root.join("config/bots/bots.yml"),
+    :file_data_channels => Rails.root.join("config/bots/data_channels.yml"),
+    :file_tran_channels => Rails.root.join("config/bots/tran_channels.yml"),
+    :file_tran_users => Rails.root.join("config/bots/tran_users.yml")
+}
+````
+   
+## CLI
+
+    hex_token_bot -c /path/config/bots
+    
+
 
 ## Usage
 
