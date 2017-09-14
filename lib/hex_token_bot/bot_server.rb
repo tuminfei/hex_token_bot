@@ -24,5 +24,12 @@ module HexTokenBot
         end
       end
     end
+
+    def run!
+      while true
+        puts ".."
+        sleep(2)
+      end
+    end
   end
 end

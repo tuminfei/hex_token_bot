@@ -1,3 +1,45 @@
 #!/usr/bin/env ruby
 
+# Enables UTF-8 compatibility in ruby 1.8.
+$KCODE = 'u' if RUBY_VERSION < '1.9'
+
+$LOAD_PATH.unshift(File.expand_path("../../lib", __FILE__))
+
 require "hex_token_bot"
+require 'optparse'
+require 'irb'
+require 'yaml'
+require 'rubygems'
+
+options = {}
+option_parser = OptionParser.new do |opts|
+  opts.banner = 'here is help messages of the command line tool.'
+
+  opts.on('-v', '--version', 'Prints the version') do
+    puts HexTokenBot::VERSION
+    exit
+  end
+
+  opts.on('-c FILE_PATH', '--config FILE_PATH', 'Pass-in config path') do |value|
+    options[:config_file_path] = value
+  end
+
+end.parse!
+
+puts options.inspect
+
+if options[:config_file_path]
+  HexTokenBot.bots_yml = {
+      :file_bots => File.join(options[:config_file_path], 'bots.yml'),
+      :file_data_channels => File.join(options[:config_file_path], 'data_channels.yml'),
+      :file_tran_channels => File.join(options[:config_file_path], 'tran_channels.yml'),
+      :file_tran_users => File.join(options[:config_file_path], 'tran_users.yml')
+  }
+else
+  $stderr.puts("To specify a custom config file use `hex_token_bot -c path/to/config_path`.")
+  exit
+end
+
+cli = HexTokenBot::BotServer.new
+cli.run!
+
