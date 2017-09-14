@@ -8,7 +8,7 @@ module HexTokenBot
       end
 
 
-      def get_market_order_book(market_code)
+      def get_market_order_book(market_code, asks_limit = nil , bids_limit = nil)
         rep = @client.order_book(market_code)
         rep
       end

@@ -14,7 +14,7 @@ module HexTokenBot
       end
 
 
-      def get_market_order_book(market_code, asks_limit, bids_limit)
+      def get_market_order_book(market_code, asks_limit = nil , bids_limit = nil)
         rep = client.get '/api/v2/order_book', market: market_code
         rep
       end
