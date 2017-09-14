@@ -13,7 +13,6 @@ module HexTokenBot
         case bot['bot_name']
           when 'bot_auto_trans'
             when_ever = bot['bot_params']['when_ever']
-            puts '--------------------'
             HexTokenBot::Bots::BotAutoTrans.set(:name, bot['bot_name'])
             scheduler.every when_ever||'3s', :tag => bot['bot_name'] do
               puts 'Hello... Bots'
