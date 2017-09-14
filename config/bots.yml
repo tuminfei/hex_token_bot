@@ -19,3 +19,15 @@
       quote_unit: cny
       tran_price_add: 0.1
       tran_amount: 0.0001
+    - id: btceth
+      name: BTC/ETH
+      base_unit: btc
+      quote_unit: eth
+      tran_price_add: 0.1
+      tran_amount: 0.0001
+    - id: ethbtc
+      name: ETH/BTC
+      base_unit: eth
+      quote_unit: btc
+      tran_price_add: 0.1
+      tran_amount: 0.0001

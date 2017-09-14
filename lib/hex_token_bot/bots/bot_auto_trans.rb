@@ -21,7 +21,8 @@ module HexTokenBot
                   m_code = m['base_unit'] + '_' + m['quote_unit']
                   rep = client.get_order_newest(m_code)
                   source_rate = source_data[m['id']] || []
-                  source_rate << rep[:rate]
+                  price = rep.empty? ? 0 : rep[:rate]
+                  source_rate << price
                   source_data.store(m['id'], source_rate)
                 end
               end
@@ -31,7 +32,8 @@ module HexTokenBot
                   m_code = m['base_unit'] + m['quote_unit']
                   rep = client.get_order_newest(m_code)
                   source_rate = source_data[m['id']] || []
-                  source_rate << rep[:rate]
+                  price = rep.empty? ? 0 : rep['price'].to_f
+                  source_rate << price
                   source_data.store(m['id'], source_rate)
                 end
               end
@@ -41,12 +43,15 @@ module HexTokenBot
                   m_code = m['base_unit'] + '_' + m['quote_unit']
                   rep = client.get_order_newest(m_code)
                   source_rate = source_data[m['id']] || []
-                  source_rate << rep['price'].to_f
+                  price = rep.empty? ? 0 : rep['price'].to_f
+                  source_rate << price
                   source_data.store(m['id'], source_rate)
                 end
               end
             end
           end
+
+          info "抓取渠道数据：#{source_data.to_s}"
 
           #查询本地数据
           local = HexTokenBot.tran_channels['hex'].symbolize_keys
@@ -54,10 +59,11 @@ module HexTokenBot
           markets.each do |m|
             market_code = m['id']
             rep = client.get_order_newest(market_code)
-
-            local_rate = rep.empty? ? 0 : rep[:rate]
+            local_rate = rep.empty? ? 0 : rep['price'].to_f
             local_max_data.store(m['id'], local_rate)
           end
+
+          info "抓取本地数据：#{local_max_data.to_s}"
 
           #数据分析处理
           markets.each do |m|
@@ -67,6 +73,7 @@ module HexTokenBot
             source_max_data.store(market_code, source_max)
             #如果渠道挂单价格 >= 本地挂单价格，直接生成买单吃用户的单
             #如果渠道挂单价格 < 本地挂单价格，直接生成买单吃用户的单
+
             if source_max >= local_max_data[market_code]
               price = local_max_data[market_code]
               #插入数据

@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Terry"]
   spec.email         = ["tuminfei1981@gmail.com"]
 
-  spec.summary       = %q{58token bot.}
-  spec.description   = %q{58token bot.}
+  spec.summary       = "58token bot."
+  spec.description   = "58token bot."
   spec.homepage      = "https://github.com/tuminfei/hex_token_bot"
   spec.license       = "MIT"
 

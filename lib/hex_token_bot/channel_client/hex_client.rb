@@ -21,9 +21,9 @@ module HexTokenBot
 
       def get_order_newest(market_code)
         rep = client.get '/api/v2/trades', market: market_code
-        if !rep.empty? and !rep[:data].nil?
-          count = rep[:data].size
-          rep[:data][count - 1]
+        if rep.class == Array and !rep.empty?
+          count = rep.size
+          rep[count - 1]
         else
           []
         end

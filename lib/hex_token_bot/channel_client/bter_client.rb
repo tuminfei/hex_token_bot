@@ -15,7 +15,7 @@ module HexTokenBot
 
       def get_order_newest(market_code)
         rep = @client.trade_history(market_code)
-        unless rep[:data].nil?
+        if !rep.empty? and !rep[:data].nil?
           count = rep[:data].size
           rep[:data][count - 1]
         else
